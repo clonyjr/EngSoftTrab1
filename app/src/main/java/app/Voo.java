@@ -19,7 +19,7 @@ public class Voo {
 
 	  public String getId() { return id; }
 	  public String getNumero() { return numero; }
-	  public String getCidade() { return pais; }
+	  public String getPais() { return pais; }
 
 	  @Override
 	  public String toString() {
