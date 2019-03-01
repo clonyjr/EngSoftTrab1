@@ -34,7 +34,7 @@ public class Voo {
   @Override
   public String toString() {
     return String.format(
-      "{ id: %s, number: %s, country: %s }",
+      "{ vooId: %s, number: %s, country: %s }",
       this.vooId,
       this.numero,
       this.pais
