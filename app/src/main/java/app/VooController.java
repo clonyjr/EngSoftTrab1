@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+//import org.springframework.web.client.*;
 
 //import java.util.List;
 //
@@ -25,6 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class VooController {
+	private Client client;
 	@RequestMapping("/")
     public String index() {
         return voos().toString();
@@ -50,8 +53,8 @@ public class VooController {
 	      throw new RuntimeException(e);
 	    }
 	  }
-	
-	private List<Voo> processa(final Map map) {
+
+	  private List<Voo> processa(final Map map) {
 	    final List<Voo> voos = new ArrayList<Voo>();
 	    final List lines = (List)map.get("states");
 	    for(int i = 0, l = lines.size(); i < l; i++) {
@@ -59,5 +62,6 @@ public class VooController {
 	      voos.add(new Voo(line));
 	    }
 	    return voos;
-	}
+	  }
+
 }
